@@ -12,6 +12,13 @@ int grid[9][9] = {
    {0, 4, 5, 2, 0, 6, 3, 0, 0}
 };
 
+int isPresentInCol(int,int);
+int isPresentInRow(int,int);
+int isPresentInBox(int,int,int);
+int isValid(int,int,int);
+int getEmptyPlace(int*,int*);
+int solveIt();
+int printGrid();
 
 
 int main(){
