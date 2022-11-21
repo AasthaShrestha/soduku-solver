@@ -30,7 +30,26 @@ int isValid(int row,int col,int num){
     return (!isPresentInBox(row - row%3,col - col%3,num) && !isPresentInCol(col,num) && !isPresentInRow(row,num));
 }
 
+int isPresentInRow(int row, int num){ //check whether num is present in row or not
+   for (int col = 0; col < 9; col++)
+      if (grid[row][col] == num)
+         return 1;
+   return 0;
+}
 
+
+ 
+int isPresentInBox(int boxStartRow, int boxStartCol, int num){
+//check whether num is present in 3x3 box or not
+    for (int row = 0; row < 3; row++){
+        for (int col = 0; col < 3; col++){
+            if (grid[row+boxStartRow][col+boxStartCol] == num){
+                return 1;
+            }
+        }
+    }
+    return 0;
+}
 
 int solveIt(){
     int row,col;
