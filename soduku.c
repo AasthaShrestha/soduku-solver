@@ -26,6 +26,10 @@ int isPresentInCol(int col, int num){ //check whether num is present in col or n
    return 0;
 }
 
+int isValid(int row,int col,int num){
+    return (!isPresentInBox(row - row%3,col - col%3,num) && !isPresentInCol(col,num) && !isPresentInRow(row,num));
+}
+
 
 
 int solveIt(){
