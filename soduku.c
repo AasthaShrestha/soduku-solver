@@ -13,8 +13,14 @@ int grid[9][9] = {
 };
 
 
+
 int main(){
-    printf("hello");
+    if (solveIt()){
+        printGrid();
+    }
+    else{
+        printf("no solution found");
+    }
 }
 
 int isPresentInCol(int col, int num){ //check whether num is present in col or not
@@ -44,6 +50,19 @@ int isPresentInBox(int boxStartRow, int boxStartCol, int num){
     for (int row = 0; row < 3; row++){
         for (int col = 0; col < 3; col++){
             if (grid[row+boxStartRow][col+boxStartCol] == num){
+                return 1;
+            }
+        }
+    }
+    return 0;
+}
+
+int getEmptyPlace(int *row,int *col){
+    for (int i=0;i<9;i++){
+        for (int j=0;j<9;j++){
+            if (grid[i][j] == 0){
+                *row = i;
+                *col = j;
                 return 1;
             }
         }
