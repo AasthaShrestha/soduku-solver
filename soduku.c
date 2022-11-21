@@ -18,7 +18,7 @@ int isPresentInBox(int,int,int);
 int isValid(int,int,int);
 int getEmptyPlace(int*,int*);
 int solveIt();
-int printGrid();
+void printGrid();
 
 
 int main(){
@@ -94,7 +94,7 @@ int solveIt(){
     return 0;
 }
  
-int printGrid(){
+void printGrid(){
     for (int i=0;i<9;i++){
         if (i==0 )
             printf("-------------------------\n");
